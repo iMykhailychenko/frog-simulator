@@ -19,8 +19,7 @@ export default class Actions {
     jump() {
         refs.jumpBtn.addEventListener('click', () => {
             // validate selected cell
-            const validate =  this.validation.jump();
-            if (validate.cell()) return;
+            if (this.validation.jumpCell()) return;
 
             // get position
             const cells = this.lake.services.getCheckedCells();
@@ -28,7 +27,7 @@ export default class Actions {
             const oldPosition = cells.find((cell) => cell.frog);
 
             // validate jump directions
-            if (validate.directions({ newPosition, oldPosition }))
+            if (this.validation.jumpDirections({ newPosition, oldPosition }))
                 return;
 
             // do jump
