@@ -14,7 +14,7 @@ export default class Validations {
         return false;
     }
 
-    jumpСell() {
+    jumpCell() {
         const selected = this.lake.services.getCheckedCells();
         const frogs = selected.filter((cell) => cell.frog);
 
