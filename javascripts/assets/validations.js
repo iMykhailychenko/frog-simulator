@@ -7,10 +7,7 @@ export default class Validations {
 
     change() {
         const selected = this.lake.services.getCheckedCells();
-        if (selected.length > 2) {
-            alert('You have selected more than 2 fields!');
-            return true;
-        }
+        if (selected.length > 2) return true;
         return false;
     }
 
